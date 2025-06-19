@@ -13,3 +13,18 @@ Class {
 	#category : 'Projet',
 	#package : 'Projet'
 }
+
+{ #category : 'public access' }
+And >> evaluate [ 
+	^ (in1 evaluate) and: (in2 evaluate)
+]
+
+{ #category : 'testing' }
+And >> isAnd [
+	^ true.
+]
+
+{ #category : 'accessing - structure variables' }
+And >> state [
+	^ in1 state and: in2 state
+]

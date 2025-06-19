@@ -6,9 +6,8 @@ Class {
 }
 
 { #category : 'as yet unclassified' }
-InitialisationInterrupteur >> interrupteurInitialize [
-    | interrupteur state |
+InitialisationInterrupteur >> testInterrupteurInitialize [
+    | interrupteur |
     interrupteur := Interrupteur new.
-    interrupteur off.
     self deny: interrupteur state.
 ]

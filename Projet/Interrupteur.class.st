@@ -5,15 +5,33 @@ Class {
 	#name : 'Interrupteur',
 	#superclass : 'Composant',
 	#instVars : [
-		'state'
+		'state',
+		'BlElement'
+	],
+	#classInstVars : [
+		'blElement'
 	],
 	#category : 'Projet',
 	#package : 'Projet'
 }
 
+{ #category : 'public access' }
+Interrupteur >> evaluate [
+	| signal |
+	signal := state
+		          ifTrue: [ SignalHaut new ]
+		          ifFalse: [ SignalBas new ].
+	^ signal
+]
+
 { #category : 'initialization' }
 Interrupteur >> initialize [
  	self off
+]
+
+{ #category : 'testing' }
+Interrupteur >> isInterrupteur [
+    ^ true.
 ]
 
 { #category : 'as yet unclassified' }

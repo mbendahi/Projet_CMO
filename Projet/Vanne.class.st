@@ -5,11 +5,22 @@ Class {
 	#name : 'Vanne',
 	#superclass : 'Composant',
 	#instVars : [
-		'state'
+		'state',
+		'in'
 	],
 	#category : 'Projet',
 	#package : 'Projet'
 }
+
+{ #category : 'public access' }
+Vanne >> evaluate [
+	^ in evaluate
+]
+
+{ #category : 'testing' }
+Vanne >> isVanne [
+	^ true.
+]
 
 { #category : 'as yet unclassified' }
 Vanne >> off [
@@ -23,9 +34,10 @@ Vanne >> on [
 
 { #category : 'initialization' }
 Vanne >> setIn: comp [
+	in := comp.
 ]
 
 { #category : 'accessing' }
 Vanne >> state [
-	^ state
+	^ in state
 ]

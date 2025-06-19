@@ -13,3 +13,18 @@ Class {
 	#category : 'Projet',
 	#package : 'Projet'
 }
+
+{ #category : 'public access' }
+Or >> evaluate [
+	^ (in1 evaluate) or: (in2 evaluate)
+]
+
+{ #category : 'testing' }
+Or >> isOr [ 
+	^ true.
+]
+
+{ #category : 'accessing - structure variables' }
+Or >> state [
+	^ in1 state or: in2 state
+]
